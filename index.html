@@ -31,7 +31,7 @@ a{color:inherit}
 .titlebox h1{font-size:40px;line-height:1.2;font-weight:500}
 .titlebox p{margin-top:8px;font-size:17px;line-height:1.18}
 .heroctas{position:absolute;left:0;right:0;bottom:32px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 24px}
-.legal-s{font-size:12px;color:rgba(255,255,255,.88);text-align:center;max-width:640px}
+.legal-s{font-size:13px;color:#fff;text-align:center;background:rgba(0,0,0,.5);padding:6px 12px;border-radius:var(--r)}.legal-s span{display:inline-block;margin:0 8px}
 section{padding:96px 0}
 h2{font-size:40px;line-height:1.2;font-weight:500;text-align:center}
 .lead{text-align:center;color:var(--graph);font-size:17px;line-height:1.18;margin:12px auto 0;max-width:560px}
@@ -96,18 +96,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
  </picture>
  <div class="veil"></div>
  <nav class="nav" aria-label="Principal"><a class="l" href="#top">Model 3</a><a href="tel:900000000">900 000 000</a></nav>
- <div class="titlebox"><h1>Model 3</h1><p>Conduce antes de decidir</p></div>
+ <div class="titlebox"><h1>Model 3</h1><p>Solicita tu prueba de conducción</p></div>
  <div class="heroctas">
-  <p class="legal-s">Prueba gratuita y sin compromiso. Te llamamos para elegir día, hora y centro.</p>
-  <form class="hform" id="reserva" onsubmit="event.preventDefault();this.classList.add('sent');/* conversión: dataLayer.push({event:'drive_request_success'}) solo tras confirmar el envío */">
-   <div class="fields">
+  <p class="legal-s"><span>✓ Gratuita</span><span>✓ Sin compromiso</span><span>✓ Confirmación en 24 h y cambio de cita</span></p>
+  <form class="hform" id="reserva" onsubmit="event.preventDefault();this.classList.add('sent');window.dataLayer=window.dataLayer||[];dataLayer.push({event:'drive_request_success'});">
+   <input type="hidden" name="gclid" id="gclid"><div class="fields">
     <div class="f"><label for="n">Nombre</label><input id="n" name="nombre" autocomplete="given-name" placeholder="Tu nombre" required></div>
     <div class="f"><label for="t">Teléfono móvil</label><input id="t" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="6XX XXX XXX" required></div>
     <div class="f"><label for="e">Correo electrónico</label><input id="e" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required></div>
     <div class="f"><label for="cp">Código postal</label><input id="cp" name="cp" inputmode="numeric" autocomplete="postal-code" placeholder="28001" required></div>
-    <button class="btn p" type="submit">Pedir prueba</button>
+    <button class="btn p" type="submit">Solicitar prueba</button>
    </div>
-   <label class="consent"><input type="checkbox" required><span>Acepto la política de privacidad y que me contacten para gestionar mi prueba. Formulario de demostración: no recoge datos reales.</span></label>
+   <label class="consent"><input type="checkbox" required><span>Acepto la política de privacidad (RGPD) y que me contacten para gestionar mi prueba. Formulario de demostración: no recoge datos reales.</span></label>
    <div class="ok" role="status"><b>Solicitud recibida</b><span>Te llamamos en menos de 24 horas.</span></div>
   </form>
  </div>
@@ -133,14 +133,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
  <h2>Solo se entiende conduciendo</h2>
  <div class="cards">
   <div class="card"><div class="img"><img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-3-Meet-Carousel-Slide-1-Desktop-V2.png" alt="" loading="lazy" width="646" height="480"></div><div class="t"><b>Silencio y respuesta</b><span>Acelera en tus calles de siempre y siente la diferencia.</span></div></div>
-  <div class="card"><div class="img"><img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-3-Meet-Carousel-Slide-2-Desktop.png" alt="" loading="lazy" width="646" height="480"></div><div class="t"><b>Una pantalla para todo</b><span>Pantalla táctil central de 16" para casi todos los controles.</span></div></div>
+  <div class="card"><div class="img"><img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-3-Meet-Carousel-Slide-2-Desktop.png" alt="" loading="lazy" width="646" height="480"></div><div class="t"><b>Siempre al día</b><span>Pantalla central de 16" y actualizaciones de software del coche.</span></div></div>
   <div class="card"><div class="img"><img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-3-Meet-Carousel-Slide-3-Desktop.png" alt="" loading="lazy" width="646" height="480"></div><div class="t"><b>Carga rápida</b><span>Supercargador de hasta 175 kW: +286 km en 15 minutos.</span></div></div>
  </div>
  <p class="note">Datos de la ficha aportada por el cliente. Los kilómetros añadidos en 15 minutos se calculan a velocidad constante.</p>
 </div></section>
 <section class="cmp"><div class="wrap">
  <h2>¿Dudas entre eléctricos?</h2><p class="lead">La mejor comparación es sentarte al volante.</p>
- <a class="btn p" href="#reserva">Pedir prueba</a>
+ <a class="btn p" href="#reserva">Solicitar prueba</a>
 </div></section>
 <section><div class="wrap">
  <h2>Preguntas frecuentes</h2>
@@ -150,10 +150,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <details><summary>¿Tengo que comprarlo después?</summary><p>No. La prueba es gratuita y sin compromiso de compra.</p></details>
  </div>
 </div></section>
-<section class="final"><div class="wrap"><h2>Tu prueba te espera</h2><p class="lead">Un minuto para pedirla.</p><a class="btn p" href="#reserva">Pedir prueba</a></div></section>
+<section class="final"><div class="wrap"><h2>Tu prueba te espera</h2><p class="lead">Un minuto para pedirla.</p><a class="btn p" href="#reserva">Solicitar prueba</a></div></section>
 <footer><div class="wrap"><span>Privacidad · Cookies · Aviso legal</span><span>Prototipo académico no oficial · Estrategias SEM (UOC)</span></div></footer>
-<div class="stick"><a class="btn p" href="#reserva">Pedir prueba</a></div>
+<div class="stick"><a class="btn p" href="#reserva">Solicitar prueba</a></div>
 <script>
+window.dataLayer=window.dataLayer||[];dataLayer.push({event:'landing_view'});
+(function(){var m=location.search.match(/[?&]gclid=([^&]+)/),g=document.getElementById('gclid'),s=false;if(m&&g)g.value=decodeURIComponent(m[1]);document.getElementById('reserva').addEventListener('focusin',function(){if(!s){s=true;dataLayer.push({event:'form_start'});}});})();
 (function(){var st=document.querySelector('.stick'),f=document.getElementById('reserva');
 if(!st||!f||!('IntersectionObserver' in window))return;
 new IntersectionObserver(function(e){st.style.display=e[0].isIntersecting?'none':'';},{threshold:.25}).observe(f);})();
